@@ -1,9 +1,9 @@
-.section4 { 
+.HomeContactSection {
     width: 100%;
     height: auto;
 }
 
-.sec4part1 {
+.contactContent {
     width: 100%;
     height: 400px;
     padding: 50px 0;
@@ -12,19 +12,19 @@
     transition: 1s;
 }
 
-.advantages {
+.homeContacts {
     width: 1200px;
     height: 300px;
     margin: auto auto;
     display: flex;
 }
 
-.EachAdvantage {
+.EachContact {
     width: 400px;
     height: 100%;
 }
 
-.atvantagePart1 {
+.contactPart1 {
     width: 100%;
     height: 40%;
     position: relative;
@@ -41,7 +41,7 @@
     background-color: rgb(174, 206, 137);
 }
 
-.atvantagePart2 {
+.contactPart2 {
     width: 100%;
     height: 60%;
     display: flex;
@@ -51,11 +51,11 @@
     background-color: #ededed;
 }
 
-.advatntage2 > .atvantagePart2 {
+.contact2 > .contactPart2 {
     justify-content: center;
 }
 
-.atvantagePart2 a {
+.contactPart2 p {
     color: #424443;
     text-decoration: none;
     font-size: 20px;
@@ -65,7 +65,13 @@
     font-weight: 700;
 }
 
-.atvantagePart2 span {
+.contactPart2 a {
+    font-size: 13px;
+    color: #eeaa9c;
+    text-decoration: none;
+}
+
+.contactPart2 span {
     font-size: 13px;
     color: #8f8f8f;
 }
@@ -80,38 +86,51 @@
     border-right: 0.5px solid #b1b1b1;
 }
 
-
-.sec4part2 {
+footer {
     width: 100%;
     height: auto;
+    display: flex;
+    border-bottom: 0.5px solid rgba(157, 157, 157, 0.616);
 }
 
-.sec4part2Content {
-    width: 1200px;
-    height: auto;
+.footerDiv {
+    width: auto;
+    height: 340px;
     margin: auto;
 }
 
+.footerDiv a img {
+    width: 150px;
+    height: 160px;
+    margin: auto;
+}
 
-.sec4part2description {
+.footerLinks {
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.footerLinks .eachFooterLink {
+    width: 35px;
+    height: 35px;
+    background-color: #aece89;
+    border-radius: 50%;
     text-align: center;
-    padding: 40px 0;
+    text-decoration: none;
+    color: white;
 }
 
-.sec4part2description h1{
-    font-family: "Playfair Display bold";
-    font-size: 40px;
-    color: #424443;
+.privacyDiv {
+    width: 100%;
+    height: 50px;
+    display: flex;
 }
 
-.sec4part2description span {
-    display: block;
-    text-transform: uppercase;
-    color: #a2bc85;
-    letter-spacing: 4.5px;
-    font-weight: 700;
-    font-size: 10px;
-    margin: 10px 0;
+.privacySpan {
+    margin: auto;
+    color: #8f8f8f;
+    font-size: 12px;
 }
-
-

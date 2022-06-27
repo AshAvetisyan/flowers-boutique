@@ -6,6 +6,8 @@
 .section3 {
     width: 100%;
     height: auto;
+    z-index: 1;
+    position: relative;
 }
 
 .backGround {
@@ -26,6 +28,7 @@
     width: 60%;
     height: 500px;
 }
+
 
 .sec3Part2 {
     width: 40%;
