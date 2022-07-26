@@ -4,14 +4,14 @@
 }
 
 .section8content {
-    width: 1200px;
+    max-width: 1200px;
     height: auto;
     margin: 0 auto 100px auto;
     
 }
 
 .sec8part1 {
-    width: 1200px;
+    max-width: 1200px;
     margin: auto;
     display: flex;
 }
@@ -39,9 +39,13 @@
     margin: 20px 0;
 }
 
+.sec8part2 {
+    height: auto;
+}
+
 .serviceDivs {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -50,12 +54,11 @@
     height: auto;
     background-color: #eff4f3;
     text-align: center;
-    margin: 40px 0;
+    margin: 40px 15px;
 }
 
 .eachService img {
-    width: 370px;
-    height: 166px;
+    width: 100%;
 }
 
 .eachService h1 {
@@ -67,7 +70,7 @@
 }
 
 .eachService ul {
-    width: 250px;
+    width: 70%;
     margin: 0 auto 50px auto;
     text-decoration: none;
     line-height: 40px;
@@ -107,4 +110,12 @@
     font-weight: 700;
     font-size: 11px;
     text-decoration: none;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 450px) {
+    .eachService {
+        width: 80%;
+    }
 }

@@ -43,7 +43,7 @@ function HomeSection6() {
                     <div className="sec6part2Content">
                         <div className="sec6part2Divs">
                             {blogs.map((blog) => (
-                                    <div className="sec6EachDiv">
+                                    <div className="sec6EachDiv" key={blog.img}>
                                         <img src={blog.img}/>
                                         <a href="#">{blog.date}</a>
                                         <h1>{blog.comment}</h1>

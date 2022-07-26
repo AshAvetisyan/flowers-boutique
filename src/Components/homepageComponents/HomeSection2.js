@@ -1,5 +1,6 @@
 import "./HomeSection2.css";
 import linkPng from "../../img/link.png";
+import { Link } from "react-router-dom";
 
 function HomeSection2() {
 
@@ -28,7 +29,7 @@ function HomeSection2() {
                 <div className="adContent">
                     <div>
                         <span>FREE next dey delievry when you order by 6pm</span>
-                        <button>ORDER FLOWERS</button> 
+                        <Link to="/shop"><button>ORDER FLOWERS</button> </Link>
                     </div>    
                 </div>
             </div>
@@ -48,7 +49,7 @@ function HomeSection2() {
                                 </div>
                                 <div className="part2">
                                     <span>{service.content}</span>
-                                    <button>Shop Now</button>
+                                    <Link to="/shop"><button>Shop Now</button></Link>
                                 </div>
                             </div>
                         )

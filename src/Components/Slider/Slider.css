@@ -1,8 +1,20 @@
 .container-slider {
     width: 100% !important;
-    height: 800px !important;
+    height: 80vh !important;
     position: relative;
     overflow: hidden;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .container-slider{
+      height: 60vh !important;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .container-slider{
+      height: 30vh !important;
+    }
   }
 
   .slide {

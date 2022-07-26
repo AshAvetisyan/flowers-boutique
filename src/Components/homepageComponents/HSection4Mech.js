@@ -67,11 +67,3 @@ export default function HSection4Mech() {
 
 }
 
-{/* <div className="eachAssortFlower">
-<img src={product2Img} />
-<div className="assortContent">
-    <a href="#">TEA ROSE</a>
-    <span>$35.00</span>
-    <button>add to card</button>
-</div>
-</div> */}

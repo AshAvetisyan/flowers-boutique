@@ -1,8 +1,9 @@
 import "./HomeSection3.css";
 import welcomeImg from "../../../src/img/bg_welcome.jpg"
 import SliderSection3 from "./Slider-section3/Slider";
+import { Link } from "react-router-dom";
 
-function HomeSection3() {
+function HomeSection3(props) {
     return(
         <section className="section3">
             <div className="backGround">
@@ -19,7 +20,7 @@ function HomeSection3() {
                                 Florist shops are the main flower-only outlets, but supermarkets, garden supply stores also sell flowers.
                                 </span>
                             </div>
-                            <a href="#"><button>More About Me</button></a>
+                            <Link to={props.link}><button style={props.style}>More About Me</button></Link>
                         </div>
                     </div>
                 

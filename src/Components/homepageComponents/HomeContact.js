@@ -1,5 +1,5 @@
 import "./HomeContact.css";
-import flonaLogo from '../../img/flonalogo.png';
+import Footer from "./Footer";
 
 function HomeContact() {
 
@@ -14,7 +14,7 @@ function HomeContact() {
                         </div>
                         <div className="contactPart2">
                             <p href="#">ADDRESS</p>
-                            <span>123, New Lenox Chicago, IL 60606</span>
+                            <span>Los Angeles, California</span>
                         </div>
                     </div>
                     <div className="EachContact contact2">
@@ -24,7 +24,7 @@ function HomeContact() {
                         <div className="contactPart2">
                             <div className="forBorder">
                                 <p>PHONE</p>
-                                <a href="tel:+1 800-123-4567">800-123-4567</a>
+                                <a href="tel:+17479660333">747-966-0333</a>
                             </div>
                         </div>
                     </div>
@@ -34,24 +34,10 @@ function HomeContact() {
                         </div>
                         <div className="contactPart2">
                             <p>EMAIL ADDRESS</p>
-                            <a href = "mailto: info@yoursite.com">info@yoursite.com</a>
+                            <a href = "mailto: 2004ashota@gmail.com">2004ashota@gmail.com</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <footer>
-                <div className="footerDiv">
-                    <a href="#"><img src={flonaLogo}/></a>
-                    <div className="footerLinks">
-                        <a href=""><div className="eachFooterLink"></div></a>
-                        <a href=""><div className="eachFooterLink"></div></a>
-                        <a href=""><div className="eachFooterLink"></div></a>
-                        <a href=""><div className="eachFooterLink"></div></a>
-                    </div>
-                </div>
-            </footer>
-            <div className="privacyDiv">
-                <span className="privacySpan">AncoraThemes © 2022. Terms of Use and Privacy Policy</span>
             </div>
         </section>
     )

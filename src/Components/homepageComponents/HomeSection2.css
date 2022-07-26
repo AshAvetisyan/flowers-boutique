@@ -11,21 +11,22 @@
 
 .adDiv {
     width: 100%;
-    height: 150px;
+    height: auto;
     background-color: rgb(174, 206, 137);
     display: flex;
 }
 
 .adContent {
-    width: 70%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     display: flex;
-    margin: auto;
+    margin: 50px auto;
 }
 
 .adContent div{
     width: auto;
     margin: auto;
+    text-align: center;
 }
 
 .adContent div span {
@@ -45,6 +46,58 @@
     background-color: #8aa170;
     border: none;
     letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+@media screen and (max-width: 750px) {
+    .adContent div button{
+        margin: 20px;
+    }
+
+    .adContent {
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+   .adContent div span {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .adContent div span {
+        font-size: 15px;
+        display: block;
+    }
+
+    .adContent {
+        margin: 10px;
+        text-align: center;
+    }
+
+    .adContent div button{
+        width: 150px;
+        height: 40px;
+        font-size: 12px;
+        font-weight: 700;
+        margin: 10px auto;
+        color: white;
+        background-color: #8aa170;
+        border: none;
+        letter-spacing: 2px;
+        text-decoration: none;
+}
+
+}
+
+@media screen and (max-width: 750px) {}
+
+.adContent div button:hover {
+    background-color: rgb(174, 206, 137);
+    transition: 0.3s;
 }
 
 
@@ -60,7 +113,7 @@
     height: auto;
     margin: auto;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-evenly; 
     flex-wrap: wrap;
 }
 
@@ -72,7 +125,7 @@
 
 .part1 {
     width: 100%;
-    height: 50%;
+    height: auto;
     position: relative;
     cursor: pointer;
     transition: 1s;
@@ -105,7 +158,6 @@
 
 .mainImg{
     width: 100%;
-    height: 100%;
 }
 
 .linkPng {
@@ -119,6 +171,7 @@
     height: 50%;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .part2 span{
@@ -136,13 +189,13 @@
     height: 50px;
     font-size: 12px;
     font-weight: 700;
-    margin: auto auto auto 30px;
     color: white;
     background-color: #eeaa9c;
     border: none;
     letter-spacing: 3px;
     margin: auto;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .part2 button:hover {
@@ -150,8 +203,24 @@
     transition: 0.5s;
 }
 
+@media screen and (max-width: 1200px) {
+    .serviceTypes {
+        width: 300px;
+        margin: 20px;
+    }
+}
 
+@media screen and (max-width: 400px) {
+    .serviceTypes {
+        width: 80%;
+        margin: 20px;
+    }
 
+    .part1 {
+        width: 100%;
+        height: auto;
+    }
+}
 
 
 

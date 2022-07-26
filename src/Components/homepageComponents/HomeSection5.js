@@ -5,7 +5,8 @@ function HomeSection5() {
 
     const [s5p2Display, s5p2setDisplay] = useState(
         {
-            transform: 'translate(1000px)'
+            opacity: '0',
+            transition: '0.5s'
         }
     )
     
@@ -15,8 +16,8 @@ function HomeSection5() {
 
         if(Math.ceil(scrolled > 4450)) {
             s5p2setDisplay({
-                transform: 'translate(0)'
-
+                opacity: '1',
+                transition: '0.5s'
             })
         }
 

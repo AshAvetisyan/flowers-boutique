@@ -112,7 +112,7 @@
 
 
 .questionForm textarea {
-    width: 100% !important;
+    width: calc(100% - 24px) !important;
     margin: 20px 0;
     border: none;
     background-color: transparent;
@@ -162,4 +162,13 @@
     font-weight: 700;
     font-size: 11px;
     text-decoration: none;
+    cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+    .questionForm form {
+        width: 90%;
+        margin: auto;
+    }
+
+  }

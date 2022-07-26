@@ -13,15 +13,17 @@
 }
 
 .advantages {
-    width: 1200px;
-    height: 300px;
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
     margin: auto auto;
     display: flex;
 }
 
 .EachAdvantage {
+    min-width: 250px;
     width: 400px;
-    height: 100%;
+    height: 300px;
 }
 
 .atvantagePart1 {
@@ -87,7 +89,7 @@
 }
 
 .sec4part2Content {
-    width: 1200px;
+    max-width: 1200px;
     height: auto;
     margin: auto;
 }
@@ -115,3 +117,29 @@
 }
 
 
+@media screen and (max-width: 1000px) {
+    .sec4part1 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .advantages {
+        flex-wrap: wrap;
+    }
+
+    .EachAdvantage {
+        width: auto;
+        margin: auto;
+    }
+
+    .forBorder {
+        border: none;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .EachAdvantage {
+        width: 100%;
+        min-width: 0px;
+    }
+}

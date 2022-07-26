@@ -1,10 +1,10 @@
 import "./QuestionForm.css";
 import naghsh from "../../img/naghsh.png";
 
-function QuestionForm() {
+function QuestionForm(props) {
     return(
         <section className="questionSection">
-            <div className="questionBackground">
+            <div className="questionBackground" style={props.style}>
                 <div className="questionContent">
                     <div className="questionDivDescription">
                         <h1>Have a Question?</h1>
@@ -18,6 +18,7 @@ function QuestionForm() {
                             <textarea type="text" placeholder="Message*" />
                             <input type="checkbox" />
                             <span>I agree that my submitted data is being collected and stored.</span>
+                            <br/>
                             <input type="submit" value="send message" />
                         </form>
                     </div>

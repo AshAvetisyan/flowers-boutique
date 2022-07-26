@@ -1,4 +1,5 @@
 import Header from "../Components/Header";
+import Footer from "../Components/homepageComponents/Footer";
 import HomeContact from "../Components/homepageComponents/HomeContact";
 import HomeSection2 from "../Components/homepageComponents/HomeSection2";
 import HomeSection3 from "../Components/homepageComponents/HomeSection3";
@@ -17,7 +18,7 @@ function HomePage() {
             <Header />
             <Slider />
             <HomeSection2 />
-            <HomeSection3 />
+            <HomeSection3 link="/about" />
             <HomeSection4 />
             <HomeSection5 />
             <HomeSection6 />
@@ -26,6 +27,7 @@ function HomePage() {
             <HomeSection9 />
             <QuestionForm />
             <HomeContact />
+            <Footer />
         </div>
     )
 }

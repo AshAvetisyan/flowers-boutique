@@ -46,7 +46,7 @@ function HomeSection9() {
                 <div className="section9part2">
                     <div className="galleryDivs">
                         {gallery.map(eachGallery => (
-                            <div className="eachGallery">
+                            <div className="eachGallery" key={eachGallery.galleryImg}>
                                 <img src={eachGallery.galleryImg} />
                                 <div className="eachGalleryContent">
                                     <div>
