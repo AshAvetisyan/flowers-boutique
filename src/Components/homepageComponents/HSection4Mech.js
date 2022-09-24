@@ -1,4 +1,5 @@
 import "./HSection4Mech.css"
+import { useDispatch, useSelector } from "react-redux";
 import product1Img from "../../img/flowers/product1.jpg";
 import product2Img from "../../img/flowers/product2.jpg";
 import product3Img from "../../img/flowers/product3.jpg";
@@ -11,51 +12,60 @@ export default function HSection4Mech() {
     const flowers = [
         {
             N: 1,
-            img: product1Img,
-            name: "BACHELOR'S BUTTON",
-            price: "$55.00",
+            itemImg: product1Img,
+            itemName: "BACHELOR'S BUTTON",
+            itemPrice: "55",
         },
         {
             N: 2,
-            img: product2Img,
-            name: "DESERT ROSE",
-            price: "$65.00"
+            itemImg: product2Img,
+            itemName: "DESERT ROSE",
+            itemPrice: "65"
         },
         {
             N: 3,
-            img: product3Img,
-            name: "GRAPE HYACINTH",
-            price: "$45.00"
+            itemImg: product3Img,
+            itemName: "GRAPE HYACINTH",
+            itemPrice: "45"
         },
         {
             N: 4,
-            img: product4Img,
-            name: "PAINTED DAISY",
-            price: "$55.00"
+            itemImg: product4Img,
+            itemName: "PAINTED DAISY",
+            itemPrice: "55"
         },
         {
             N: 5,
-            img: product5Img,
-            name: "ROSE OF SHARON",
-            price: "$45.00"
+            itemImg: product5Img,
+            itemName: "ROSE OF SHARON",
+            itemPrice: "45"
         },
         {
             N: 6,
-            img: product6Img,
-            name: "TEA ROSE",
-            price: "$35.00"
+            itemImg: product6Img,
+            itemName: "TEA ROSE",
+            itemPrice: "35"
         }
     ]
 
+    
+    const dispatch = useDispatch()
+
     return(
         <div className="flowersAssort">
-            {flowers.map(flower => (
-               <div className="eachAssortFlower" key={flower.N}>
-               <img src={flower.img} />
+            {flowers.map(item => (
+               <div className="eachAssortFlower" key={item.N}>
+               <img src={item.itemImg} />
                <div className="assortContent">
-                   <a href="#">{flower.name}</a>
-                   <span>{flower.price}</span>
-                   <button>add to card</button>
+                   <a href="#">{item.itemName}</a>
+                   <span>${item.itemPrice}.00</span>
+                   <button onClick={(evt) => {
+                        evt.preventDefault();
+                        dispatch({
+                        type: "add-item",
+                        newItem: item
+                        })
+                    }}>Add to Card</button>
                </div>
                </div> 
             ))}

@@ -24,29 +24,33 @@ import PortfolioGrid from './pages/PortfolioGrid';
 import PortfolioCobbles from './pages/PortfolioCobbles';
 import BlogInformation from './Components/blogInformation';
 import Contact from './pages/Contact';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/pages" element={<Pages />} />
-      <Route path="/shop" element={<Shop />} />
-      <Route path="/team-members" element={<Team />} />
-      <Route path="/our-services" element={<OurServices />} />
-      <Route path="/our-services/brides-bridesmaids-bouquets" element={<Service1 />} />
-      <Route path="/our-services/corsages-boutonnieres" element={<Service2 />} />
-      <Route path="/our-services/ceremony-main-altar" element={<Service3 />} />
-      <Route path="/our-services/aisle-pew-markers" element={<Service4 />} />
-      <Route path="/our-services/ceremony-decoration" element={<Service5 />} />
-      <Route path="/our-services/tables-cake-decoration" element={<Service6 />} />
-      <Route path="/our-services/portfolio-grid" element={<PortfolioGrid />} />
-      <Route path="/our-services/portfolio-cobbles" element={<PortfolioCobbles />} />
-      <Route path="/blog" element={<BlogInformation />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
+  <Provider store={store}>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/pages" element={<Pages />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/team-members" element={<Team />} />
+        <Route path="/our-services" element={<OurServices />} />
+        <Route path="/our-services/brides-bridesmaids-bouquets" element={<Service1 />} />
+        <Route path="/our-services/corsages-boutonnieres" element={<Service2 />} />
+        <Route path="/our-services/ceremony-main-altar" element={<Service3 />} />
+        <Route path="/our-services/aisle-pew-markers" element={<Service4 />} />
+        <Route path="/our-services/ceremony-decoration" element={<Service5 />} />
+        <Route path="/our-services/tables-cake-decoration" element={<Service6 />} />
+        <Route path="/our-services/portfolio-grid" element={<PortfolioGrid />} />
+        <Route path="/our-services/portfolio-cobbles" element={<PortfolioCobbles />} />
+        <Route path="/blog" element={<BlogInformation />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Provider>
   </BrowserRouter>
 );
 

@@ -3,6 +3,7 @@
     height: auto;
     padding: 150px 0;
     display: flex;
+    justify-content: center;
 }
 
 .shopContent{
@@ -67,6 +68,12 @@
     text-align: center;
     color: #424443;
     margin: 50px 0;
+    transition: 0.5s;
+}
+
+.rangeInFilter form input[type="number"]:focus {
+    border: 2px solid #eeaa9c;
+    transition: 0.5s;
 }
 
 .to {
@@ -99,6 +106,13 @@
     letter-spacing: 3px;
     cursor: pointer;
     float: right;
+    margin: 10px;
+    transition: 0.5s;
+}
+
+.filterBtn:hover {
+    background-color: #ee9c9c;
+    transition: 0.5s;
 }
 
 
@@ -125,6 +139,13 @@
     margin: 30px 0;
     line-height: 30px;
     color: #8f8f8f;
+    transition: 0.5s;
+}
+
+.categoriesLists li:hover {
+    color: #eeaa9c;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .ProductTags {
@@ -141,10 +162,17 @@
     background-color: white;
     color: #8f8f8f;
     margin: 5px;
-
-
+    cursor: pointer;
+    transition: 0.5s;
 }
 
+
+.ProductTags div:hover {
+    border: white;
+    color: white;
+    background-color: #eeaa9c;
+    transition: 0.5s;
+}
 
 
 

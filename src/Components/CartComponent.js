@@ -1,29 +1,55 @@
-import { useState } from "react";
-import "./CartComponent.css"
+import { useContext } from "react";
+import { useSelector } from "react-redux";
+import "./CartComponent.css";
+import { CartContext } from "../pages/Shop";
 
+ 
 function CartComponent(props) {
+
+    // const value = useContext(CartContext)
+
+    const cartInventory = useSelector(function(state) {
+        return state.cartInventory
+    })
+
+    const sum = cartInventory.reduce((aggr, object) => {
+        return aggr + object.itemPrice;
+    }, 0);
 
 
     return (
         <div className="cartContainer" style={props.style}>
-            
-        <span className="emptySpan">No product in Cart</span>
-
-        {/* {props.cart.length > 0 
-            ?
-            props.cart.cart.map(eachItem => (
-                <div className="eachCartItem" key={eachItem.itemNum}>
-                    <img className="cartImgs" src={eachItem.itemImg} />
-                    <div className="cartItemInfo">
-                        <h2>{eachItem.itemName}</h2>
-                        <p>${eachItem.itemPrice}.00</p>
+            {cartInventory.length == 0 
+                ?
+                <span className="emptySpan">No product in Cart</span>
+                :
+                <div>
+                {cartInventory.map(eachItem => (
+                    <div>
+                        <div className="eachCartItem" key={eachItem.itemNum}>
+                            <img className="cartImgs" src={eachItem.itemImg} />
+                            <div className="cartItemInfo">
+                                <h2>{eachItem.itemName}</h2>
+                                <p>${eachItem.itemPrice}.00</p>
+                            </div>
+                        </div>
                     </div>
-                </div>      
-            ))
-            :
-            <span className="emptySpan">No product in Cart</span>
-        } */}
-            
+                ))}
+                <div className="priceInformation">
+                    <span>Subtotal: <span className="priceRow">
+                    ${
+                        cartInventory.reduce((aggr, object) => {
+                            return aggr + Number(object.itemPrice);
+                        }, 0)
+                    }.00    
+                    </span></span>
+                </div>
+                <div className="cartButtons">
+                    <button>view cart</button>
+                    <button>checkout</button>
+                </div>
+                </div>
+            }
         </div>
     )
 }

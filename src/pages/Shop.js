@@ -1,79 +1,92 @@
+import React, { useState  } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../Components/Header";
-import { Link } from "react-router-dom";
 import "./Shop.css";
-import flonaLogo from "../img/flonalogo.png";
-import item1Img from "../img/flowers/product1.jpg";
-import item2Img from "../img/flowers/product2.jpg";
-import item3Img from "../img/flowers/product3.jpg";
-import item4Img from "../img/flowers/product4.jpg";
-import item5Img from "../img/flowers/product5.jpg";
-import item6Img from "../img/flowers/product6.jpg";
-import item7Img from "../img/flowers/product7.jpg";
-import CartComponent from "../Components/CartComponent";
-import { useState } from "react";
 import WelcomePart from "./WelcomePart";
 import Footer from "../Components/homepageComponents/Footer";
+import CartComponent from "../Components/CartComponent";
 
 function Shop() {
+    
+    const shopProducts = useSelector(function(state) {
+        return state.shopProducts
+    })
+
+    const cartInventory = useSelector(function(state) {
+        return state.cartInventory
+    })
 
     const [price1, setPrice1] = useState("30");
     const [price2, setPrice2] = useState("70");
 
+    const shopCartStyle = {
+        padding: "0",
+        border: "0",
+        backgroundColor: "transparent",
+        marginTop: "10px"
+    }
 
-    const shopProducts = [
-        {
-            itemNum: 1,
-            itemImg: item1Img,
-            itemName: "BACHELOR'S BUTTON",
-            itemPrice: "55"
-        },
-        {
-            itemNum: 2,
-            itemImg: item2Img,
-            itemName: "DESERT ROSE",
-            itemPrice: "65"
-        },
-        {
-            itemNum: 3,
-            itemImg: item3Img,
-            itemName: "GRAPE HYACINTH",
-            itemPrice: "45"
-        },
-        {
-            itemNum: 4,
-            itemImg: item4Img,
-            itemName: "PAINTED DAISY",
-            itemPrice: "55"
-        },
-        {
-            itemNum: 5,
-            itemImg: item5Img,
-            itemName: "ROSE OF SHARON",
-            itemPrice: "45"
-        },
-        {
-            itemNum: 6,
-            itemImg: item6Img,
-            itemName: "TEA ROSE",
-            itemPrice: "35"
-        },
-        {
-            itemNum: 7,
-            itemImg: item7Img,
-            itemName: "MORNING GLORY",
-            itemPrice: "35"
-        }
-    ];
+
+    // const shopProducts = [
+    //     {
+    //         itemNum: 1,
+    //         itemImg: item1Img,
+    //         itemName: "BACHELOR'S BUTTON",
+    //         itemPrice: "55"
+    //     },
+    //     {
+    //         itemNum: 2,
+    //         itemImg: item2Img,
+    //         itemName: "DESERT ROSE",
+    //         itemPrice: "65"
+    //     },
+    //     {
+    //         itemNum: 3,
+    //         itemImg: item3Img,
+    //         itemName: "GRAPE HYACINTH",
+    //         itemPrice: "45"
+    //     },
+    //     {
+    //         itemNum: 4,
+    //         itemImg: item4Img,
+    //         itemName: "PAINTED DAISY",
+    //         itemPrice: "55"
+    //     },
+    //     {
+    //         itemNum: 5,
+    //         itemImg: item5Img,
+    //         itemName: "ROSE OF SHARON",
+    //         itemPrice: "45"
+    //     },
+    //     {
+    //         itemNum: 6,
+    //         itemImg: item6Img,
+    //         itemName: "TEA ROSE",
+    //         itemPrice: "35"
+    //     },
+    //     {
+    //         itemNum: 7,
+    //         itemImg: item7Img,
+    //         itemName: "MORNING GLORY",
+    //         itemPrice: "35"
+    //     }
+    // ];
 
     const [filteredItemsArray, setFilteredItemsArray] = useState(shopProducts);
 
-    const inventory = [];
+    // const inventory = [];
 
-    const [cartInventory, setCartInventory] = useState(inventory);
+    // const [cartInventory, setCartInventory] = useState(inventory);
+
+    const CartContext = React.createContext("Armenia");
+
+    const dispatch = useDispatch()
 
     return(
         <div className="ShopPage">
-            <Header cart={cartInventory} />
+            <CartContext.Provider value="Armenia">
+                <Header />
+            </CartContext.Provider>
             <WelcomePart PageName={"Shop"} />
 
             <section className="shopSection">
@@ -81,7 +94,8 @@ function Shop() {
                     <div className="shopFiltering">
                         <div className="cartInFilter">
                             <p>Shopping Cart</p>
-                            <CartComponent style={{width: "100%", backgroundColor: "#eff4f3", border: "none", padding: "0", margin: "20px 0"}} cart={cartInventory} />
+                            <CartComponent style={shopCartStyle} />
+                            
                         </div>
                         <div className="rangeInFilter">
                             <p>Price Filter</p>
@@ -144,8 +158,10 @@ function Shop() {
                                     <span>${item.itemPrice}.00</span>
                                     <button onClick={(evt) => {
                                         evt.preventDefault();
-                                        setCartInventory(cartInventory.push(...cartInventory, item))
-                                        alert(JSON.stringify(cartInventory))
+                                        dispatch({
+                                            type: "add-item",
+                                            newItem: item
+                                        })
                                     }}>Add to Card</button>
                                 </div>
                             </div>

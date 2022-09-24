@@ -1,5 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { FiPhone } from "react-icons/fi";
 import flonaLogo from '../img/flonalogo.png';
 import { useState } from "react";
@@ -10,7 +11,7 @@ import { BsTelephoneFill } from "react-icons/bs";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import CartComponent from "./CartComponent";
 
-function Header(props) {
+function Header() {
 
     // menu useStates
 
@@ -62,7 +63,9 @@ function Header(props) {
     const [mobDisplay4, setMobDisplay4] = useState(false)
 
 
-
+    const cartInventory = useSelector(function(state) {
+        return state.cartInventory
+    })
 
     const mobListHidden = {
         display: "none",
@@ -133,7 +136,10 @@ function Header(props) {
                         <div className="shopp2">
                             <span>Your cart:</span>
                             <br/>
-                            <span><span className="generalPrice">(0)</span> - $0.00</span>
+                            <span><span className="generalPrice">({cartInventory.length})</span> - ${
+                                cartInventory.reduce((aggr, object) => {
+                                    return aggr + Number(object.itemPrice);
+                                }, 0)}.00</span>
                         </div>
 
                     </div>
