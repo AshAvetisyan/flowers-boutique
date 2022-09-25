@@ -102,6 +102,12 @@
     font-size: 10px;
     text-decoration: none;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.sec6part2Content button:hover {
+    background-color: #ee9c9c;
+    transition: 0.5s;
 }
 
 @media screen and (max-width: 450px) {

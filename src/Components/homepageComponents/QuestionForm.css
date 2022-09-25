@@ -163,6 +163,12 @@
     font-size: 11px;
     text-decoration: none;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.questionForm input[type=submit]:hover {
+    background-color: #ee9c9c92;
+    transition: 0.5s;
 }
 
 @media screen and (max-width: 600px) {

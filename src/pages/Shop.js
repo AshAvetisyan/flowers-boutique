@@ -26,67 +26,13 @@ function Shop() {
         marginTop: "10px"
     }
 
-
-    // const shopProducts = [
-    //     {
-    //         itemNum: 1,
-    //         itemImg: item1Img,
-    //         itemName: "BACHELOR'S BUTTON",
-    //         itemPrice: "55"
-    //     },
-    //     {
-    //         itemNum: 2,
-    //         itemImg: item2Img,
-    //         itemName: "DESERT ROSE",
-    //         itemPrice: "65"
-    //     },
-    //     {
-    //         itemNum: 3,
-    //         itemImg: item3Img,
-    //         itemName: "GRAPE HYACINTH",
-    //         itemPrice: "45"
-    //     },
-    //     {
-    //         itemNum: 4,
-    //         itemImg: item4Img,
-    //         itemName: "PAINTED DAISY",
-    //         itemPrice: "55"
-    //     },
-    //     {
-    //         itemNum: 5,
-    //         itemImg: item5Img,
-    //         itemName: "ROSE OF SHARON",
-    //         itemPrice: "45"
-    //     },
-    //     {
-    //         itemNum: 6,
-    //         itemImg: item6Img,
-    //         itemName: "TEA ROSE",
-    //         itemPrice: "35"
-    //     },
-    //     {
-    //         itemNum: 7,
-    //         itemImg: item7Img,
-    //         itemName: "MORNING GLORY",
-    //         itemPrice: "35"
-    //     }
-    // ];
-
     const [filteredItemsArray, setFilteredItemsArray] = useState(shopProducts);
-
-    // const inventory = [];
-
-    // const [cartInventory, setCartInventory] = useState(inventory);
-
-    const CartContext = React.createContext("Armenia");
 
     const dispatch = useDispatch()
 
     return(
         <div className="ShopPage">
-            <CartContext.Provider value="Armenia">
-                <Header />
-            </CartContext.Provider>
+            <Header />
             <WelcomePart PageName={"Shop"} />
 
             <section className="shopSection">
@@ -148,8 +94,10 @@ function Shop() {
 
                     </div>
 
-                    <div className="ProductsDiv">
-                    {/* <span>Showing all {filteredItemsArray.length} results</span> */}
+
+                    {/* <p>Showing all {filteredItemsArray.length} results</p> */}
+
+                    <div className="ProductsDiv"> 
                         {filteredItemsArray.map((item) => (
                             <div className="EachProductItem" key={item.itemNum}>
                                 <img src={item.itemImg}/>

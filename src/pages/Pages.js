@@ -42,13 +42,13 @@ function Pages() {
             <h1 className="packageTitle">Packages</h1>
             <div className="webPackages">
                     <div className="serviceDivs">
-                        {packages.map((eachPackage) => (
-                            <div className="eachPackage eachService">
+                        {packages.map((eachPackage, index) => (
+                            <div className="eachPackage eachService" key={index}>
                                 <h1>{eachPackage.packageName}</h1>
                                 <ul>
-                                    {eachPackage.packageAdvantages.map((advantage) => {
+                                    {eachPackage.packageAdvantages.map((advantage, index) => {
                                         return(
-                                            <li>{advantage}</li>
+                                            <li key={index}>{advantage}</li>
                                         )
                                     })}
                                 </ul>

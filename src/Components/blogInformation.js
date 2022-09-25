@@ -68,8 +68,8 @@ function BlogInformation() {
             <section className="blogSection">
                 <div className="blogContentDiv">
                     <div className="blogContent">
-                        {blogs.map(blog => (
-                            <div className="eachBlogDiv">
+                        {blogs.map((blog, index) => (
+                            <div className="eachBlogDiv" key={index}>
                             <h1>{blog.blogName}</h1>
                             <img src={blog.blogImg} />
                             <div className="EachBlogInformationDiv">

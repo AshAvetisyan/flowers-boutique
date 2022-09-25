@@ -42,4 +42,10 @@
     font-size: 12px;
     text-decoration: none;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.sec7content button:hover {
+    background-color: #ee9c9c;
+    transition: 0.5s;
 }

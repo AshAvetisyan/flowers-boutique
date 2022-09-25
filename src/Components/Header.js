@@ -25,8 +25,7 @@ function Header() {
     const [display2, setdisplay2] = useState(
         {
             display: "none",
-            transition: "0.5s",
-            
+            transition: "0.5s"           
         }
     )
 
@@ -53,7 +52,6 @@ function Header() {
 
     const [headerCartShow, setHeaderCartShow] = useState(false);
     
-    
     const [mobDisplay1, setMobDisplay1] = useState(false)
 
     const [mobDisplay2, setMobDisplay2] = useState(false)
@@ -69,12 +67,14 @@ function Header() {
 
     const mobListHidden = {
         display: "none",
-        transition: "0.5s"
+        transition: "0.5s",
+        overflow: "auto"
     }
 
     const mobListShow = {
         display: "block",
-        transition: "0.5s"
+        transition: "0.5s",
+        overflow: "hidden"
     }
 
     const cartShown = {
@@ -107,6 +107,8 @@ function Header() {
         backgroundColor: "#eff4f3"
     }
 
+    const page = document.querySelector("html");;
+    mobMenuShow === true ? page.style.overflow = "hidden" : page.style.overflow = "auto"
 
 
     return (
@@ -127,7 +129,7 @@ function Header() {
                         <Link to="/home"><img src={flonaLogo}/></Link>
                     </div>
                     <div className="HeadCard" onClick={() => {
-                            setHeaderCartShow(!headerCartShow);
+                        setHeaderCartShow(!headerCartShow);
                     }}>
                         <div className="shopp1">
                             <HiOutlineShoppingBag className="HeaderBagIcon" />

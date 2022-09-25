@@ -49,9 +49,9 @@ function HomeSection8() {
                                 <img src={serviceType.serviceImage} />
                                 <h1>{serviceType.serviceName}</h1>
                                 <ul>
-                                    {serviceType.serviceAdvantages.map((advantage) => {
+                                    {serviceType.serviceAdvantages.map((advantage, index) => {
                                         return(
-                                            <li>{advantage}</li>
+                                            <li key={index} >{advantage}</li>
                                         )
                                     })}
                                 </ul>

@@ -111,6 +111,12 @@
     font-size: 11px;
     text-decoration: none;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.eachService button:hover {
+    background-color: #ee9c9c;
+    transition: 0.5s;
 }
 
 

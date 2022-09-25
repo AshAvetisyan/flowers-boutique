@@ -24,9 +24,9 @@ function CartComponent(props) {
                 <span className="emptySpan">No product in Cart</span>
                 :
                 <div>
-                {cartInventory.map(eachItem => (
-                    <div>
-                        <div className="eachCartItem" key={eachItem.itemNum}>
+                {cartInventory.map((eachItem, index) => (
+                    <div key={index}>
+                        <div className="eachCartItem">
                             <img className="cartImgs" src={eachItem.itemImg} />
                             <div className="cartItemInfo">
                                 <h2>{eachItem.itemName}</h2>

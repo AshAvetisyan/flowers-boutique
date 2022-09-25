@@ -83,6 +83,12 @@
     margin-left: 40px;
     text-transform: uppercase;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.submit_input:hover {
+    background-color: transparent;
+    transition: 0.5s;
 }
 
 

@@ -80,6 +80,12 @@
     font-size: 10px;
     font-weight: 700;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.sec5part2 a:hover {
+    background-color: #ee9c9c;
+    transition: 0.5s;
 }
 
 

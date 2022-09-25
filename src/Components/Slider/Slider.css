@@ -51,6 +51,7 @@
     height: 25px;
     pointer-events: none;
   }
+
   .prev {
     top: 50%;
     left: 20px;
@@ -81,3 +82,32 @@
   .dot.active {
     background: white;
   }
+  
+  
+@media screen and (max-width: 500px) {
+
+  .btn-slide {
+    width: 50px;
+    height: 50px;
+  }
+
+  .btn-slide img {
+    width: 20px;
+    height: 20px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+
+  .btn-slide {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn-slide img {
+    width: 15px;
+    height: 15px;
+  }
+
+}
